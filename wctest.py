@@ -4,17 +4,16 @@ from wordcloud import STOPWORDS
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('IMDB-Dataset.csv')
-print(df.head())
-print(df.columns)
-print(df['review'][0])
-
-text = ' '.join(df['review'].astype(str).tolist())
-
+#df = pd.read_csv('IMDB-Dataset.csv')
+#print(df.head())
+#print(df.columns)
+#print(df['review'][0])
+#text = ' '.join(df['review'].astype(str).tolist())
+sumnelse = ['ass','ass','ass','ass','titties']
+#text = ' '.join(df['review'].astype(str).tolist())
+text = ' '.join(sumnelse)
 text = re.sub(r'[^A-Za-z\s]', '', text)
-
 text = text.lower()
-
 stopwords = set(STOPWORDS)
 
 text = ' '.join(word for word in text.split() if word not in stopwords)
